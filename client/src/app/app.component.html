@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <a (click) = "openEditDialog({}, 'create')" class="btn btn-danger">Create New</a>
+  </div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Data</td>
+      <td>Individual User Cap</td>
+      <td>All Users Cap</td>
+      <td>Edit</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let campaign of campaigns">
+      <td>{{ campaign.id }}</td>
+      <td>{{ campaign.name }}</td>
+      <td>{{ campaign.data | json }}</td>
+      <td>{{ campaign.cap.max_count_per_user }}</td>
+      <td>{{ campaign.cap.max_count }}</td>
+      <td><a (click) = "openEditDialog(campaign, 'update')" class="btn btn-danger">Edit</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

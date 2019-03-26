@@ -1,0 +1,51 @@
+<div class="card" cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Campaign Name</label>
+        <input type="text" class="form-control" formControlName="campaign_name" />
+      </div>
+      <!--<div *ngIf="angForm.controls['campaign_name'].invalid && (angForm.controls['campaign_name'].dirty || angForm.controls['campaign_name'].touched)" class="alert alert-danger">-->
+        <!--<div *ngIf="angForm.controls['campaign_name'].errors.required">-->
+          <!--Campaign Name is required.-->
+        <!--</div>-->
+      <!--</div>-->
+      <div class="form-group">
+        <label class="col-md-4">Data.Message</label>
+        <input type="text" class="form-control" formControlName="data_message" />
+      </div>
+      <!--<div *ngIf="angForm.controls['data_message'].invalid && (angForm.controls['data_message'].dirty || angForm.controls['data_message'].touched)" class="alert alert-danger">-->
+        <!--<div *ngIf="angForm.controls['data_message'].errors.required">-->
+          <!--Data.Message is required.-->
+        <!--</div>-->
+      <!--</div>-->
+      <div class="form-group">
+        <label class="col-md-4">Max Count Per User</label>
+        <input type="text" class="form-control" formControlName="max_count_per_user"/>
+      </div>
+      <!--<div *ngIf="angForm.controls['max_count_per_user'].invalid && (angForm.controls['max_count_per_user'].dirty || angForm.controls['max_count_per_user'].touched)" class="alert alert-danger">-->
+        <!--<div *ngIf="angForm.controls['max_count_per_user'].errors.required">-->
+          <!--Max Count Per User is required.-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="form-group">
+        <label class="col-md-4">Max Count</label>
+        <input type="text" class="form-control" formControlName="max_count" />
+      </div>
+      <!--<div *ngIf="angForm.controls['max_count'].invalid && (angForm.controls['max_count'].dirty || angForm.controls['max_count'].touched)" class="alert alert-danger">-->
+        <!--<div *ngIf="angForm.controls['max_count'].errors.required">-->
+          <!--Max Count is required.-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="form-group">
+        <!--<button (click)="updateBusiness(campaign_name.value, data_message.value, max_count_per_user.value, max_count.value)"-->
+        <button (click)="updateBusiness()"
+
+                [disabled]="angForm.invalid"
+        class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
